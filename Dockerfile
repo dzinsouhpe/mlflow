@@ -4,7 +4,7 @@ LABEL maintainer="dietrich.zinsou@hpe.com"
 
 RUN yum install -y epel-release
 RUN yum install -y htop vim wget net-tools git unzip zip python3 libgfortran libgomp
-RUN yum group install "Development Tools"
+RUN yum group install -y "Development Tools"
 
 RUN pip3 install mlflow
 RUN useradd mlflow
