@@ -18,4 +18,4 @@ USER mlflow
 
 EXPOSE 5000
 
-ENTRYPOINT ["mlflow", "server", "--backend-store-uri", "/opt/mlflow/backend-store", "--host", "0.0.0.0"]
+ENTRYPOINT ["mlflow server --backend-store-uri /opt/mlflow/backend-store --host 0.0.0.0"]
