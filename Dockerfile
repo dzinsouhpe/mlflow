@@ -21,4 +21,4 @@ USER mlflow
 
 EXPOSE 5000
 
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["./bin/start.sh"]
