@@ -11,6 +11,9 @@ RUN useradd mlflow
 RUN mkdir /opt/mlflow
 RUN mkdir /opt/mlflow/backend-store
 RUN mkdir /opt/mlflow/log
+RUN mkdir /opt/mlflow/bin
+COPY start.sh /opt/mlflow/bin/start.sh
+RUN chmod +x /opt/mlflow/bin/start.sh
 RUN chown -R mlflow:mlflow /opt/mlflow
 
 WORKDIR /opt/mlflow/
@@ -18,4 +21,4 @@ USER mlflow
 
 EXPOSE 5000
 
-ENTRYPOINT ["mlflow server --backend-store-uri /opt/mlflow/backend-store --host 0.0.0.0"]
+ENTRYPOINT ["./start.sh"]
