@@ -1,4 +1,3 @@
-
 FROM bluedata/centos7:latest
 LABEL maintainer="dietrich.zinsou@hpe.com"
 
