@@ -1,2 +1,2 @@
 #!/bin/bash
-mlflow server --host 0.0.0.0
+mlflow server --backend-store-uri $MLFLOW_BACKEND_STORE --host 0.0.0.0
