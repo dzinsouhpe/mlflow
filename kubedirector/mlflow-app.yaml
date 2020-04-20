@@ -1,0 +1,38 @@
+apiVersion: kubedirector.hpe.com/v1beta1
+kind: KubeDirectorApp
+metadata:
+  name: mlflow-server
+spec:
+  label:
+    name: MLflow Server
+    description: MLflow Server on centos 7.x
+  distroID: dzinsou/mlflow-server
+  version: 'latest'
+  configSchemaVersion: 7
+  services:
+  - id: ssh
+    label:
+      name: SSH
+    endpoint:
+      port: 22
+      isDashboard: false
+  - id: mlflow
+    label:
+      name: MLflow Server
+    endpoint:
+      port: 5000
+      urlScheme: http
+      isDashboard: true
+  roles:
+  - id: mlflow-server
+    cardinality: "1"
+    imageRepoTag: docker.io/dzinsouhpe/mlflow:latest
+  config:
+    selectedRoles:
+    - mlflow-server
+    roleServices:
+    - roleID: mlflow-server
+      serviceIDs:
+      - ssh
+      - mlflow
+  systemdRequired: false
