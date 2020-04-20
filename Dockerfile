@@ -6,6 +6,7 @@ RUN yum install -y htop vim wget net-tools git unzip zip python3 libgfortran lib
 RUN yum group install -y "Development Tools"
 
 RUN pip3 install mlflow
+RUN pip3 install boto3
 RUN useradd mlflow
 RUN mkdir /opt/mlflow
 RUN mkdir /opt/mlflow/backend-store
