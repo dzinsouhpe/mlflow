@@ -3,7 +3,6 @@ apiVersion: "kubedirector.hpe.com/v1beta1"
 kind: "KubeDirectorCluster"
 metadata: 
   name: "mlflow-server-instance"
-  namespace: "@@@"
 spec: 
   app: "mlflow-server"
   appCatalog: "local"
@@ -20,13 +19,13 @@ spec:
           cpu: "2"
       env:
       - name: MLFLOW_S3_ENDPOINT_URL
-        value: "@@@"
+        value: "@@@MLFLOW_S3_ENDPOINT_URL@@@"
       - name: AWS_ACCESS_KEY_ID
-        value: "@@@"
+        value: "@@@AWS_ACCESS_KEY_ID@@@"
       - name: AWS_SECRET_ACCESS_KEY
-        value: "@@@"
+        value: "@@@AWS_SECRET_ACCESS_KEY@@@"
       - name: MLFLOW_ARTIFACT_ROOT
-        value: "@@@"
+        value: "@@@MLFLOW_ARTIFACT_ROOT@@@"
       - name: MLFLOW_BACKEND_STORE
         value: "file:///opt/mlflow/backend-store"
 

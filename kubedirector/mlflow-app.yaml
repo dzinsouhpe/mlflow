@@ -6,7 +6,7 @@ spec:
   label:
     name: MLflow Server
     description: MLflow Server on centos 7.x
-  distroID: dzinsou/mlflow-server
+  distroID: dzinsouhpe/mlflow-server
   version: 'latest'
   configSchemaVersion: 7
   services:
